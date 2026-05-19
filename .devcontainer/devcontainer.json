@@ -1,0 +1,18 @@
+{
+  "name": "JobVibe",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "JobVibe",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "remoteEnv": {
+    "HOST": "0.0.0.0",
+    "PORT": "8000",
+    "RELOAD": "false"
+  },
+  "postCreateCommand": "pip install -r requirements.txt && cp -n .env.example .env || true",
+  "postAttachCommand": "echo 'Run: python run.py  (set DEEPSEEK_API_KEY in Codespace secrets or .env)'"
+}

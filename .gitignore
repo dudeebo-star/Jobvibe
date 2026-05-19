@@ -1,0 +1,8 @@
+.env
+.venv/
+uploads/
+__pycache__/
+*.pyc
+
+# duplicate nested project copy
+/jobvibe/

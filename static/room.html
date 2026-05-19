@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobVibe — Live Room</title>
+  <link rel="stylesheet" href="/static/css/app.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="room">
+    <aside class="card">
+      <h2>Confidence (MediaPipe)</h2>
+      <div class="video-box">
+        <video id="cam" autoplay playsinline muted></video>
+      </div>
+      <div class="meters">
+        <div class="meter-row">
+          <label>Eye</label>
+          <div class="meter-track"><div class="meter-fill" id="m-eye"></div></div>
+        </div>
+        <div class="meter-row">
+          <label>Stable</label>
+          <div class="meter-track"><div class="meter-fill" id="m-stable"></div></div>
+        </div>
+        <div class="meter-row">
+          <label>Calm</label>
+          <div class="meter-track"><div class="meter-fill" id="m-calm"></div></div>
+        </div>
+        <p class="overall-badge">Overall <strong id="m-overall">—</strong></p>
+      </div>
+    </aside>
+
+    <main class="card">
+      <h2>Live interview</h2>
+      <div id="feed" class="chat-feed"></div>
+      <div class="q-current" id="question">Loading…</div>
+      <div class="answer-box">
+        <textarea id="answer" placeholder="Speak or type your answer…"></textarea>
+        <div class="toolbar">
+          <button type="button" class="btn btn-ghost btn-mic" id="mic">Mic</button>
+          <button type="button" class="btn btn-primary" id="send">Submit</button>
+          <button type="button" class="btn btn-danger" id="finish">Finish</button>
+        </div>
+        <p class="hint" id="status"></p>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/static/js/room.js"></script>
+</body>
+</html>
