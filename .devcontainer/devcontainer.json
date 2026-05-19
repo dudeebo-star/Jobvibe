@@ -14,5 +14,5 @@
     "RELOAD": "false"
   },
   "postCreateCommand": "pip install -r requirements.txt && cp -n .env.example .env || true",
-  "postStartCommand": "nohup python run.py > /tmp/jobvibe.log 2>&1 &"
+  "postStartCommand": "bash -lc 'nohup python run.py >> /tmp/jobvibe.log 2>&1 & sleep 1'"
 }
